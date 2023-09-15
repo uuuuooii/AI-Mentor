@@ -1,8 +1,11 @@
+import ChatInput from '@/app/components/chatInput'
 import React from 'react'
 
 const Main = () => {
   return (
-    <div>index</div>
+    <div>
+      <ChatInput />
+    </div>
   )
 }
 

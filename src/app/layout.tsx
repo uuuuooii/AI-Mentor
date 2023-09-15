@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Global from './lib/provider/emotion'
 import globals from './lib/styles/global'
+import ReactQueryProvider from './lib/provider/reactQuery'
 
 
 export const metadata: Metadata = {
@@ -16,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Global styles={globals} />
-        {children}</body>
+        <ReactQueryProvider>
+          <Global styles={globals} />
+          {children}
+        </ReactQueryProvider>
+      </body>
     </html>
   )
 }

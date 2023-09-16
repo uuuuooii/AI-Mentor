@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
-import TextaeaAutosize from 'react-textarea-autosize'
+import TextareaAutosize from 'react-textarea-autosize'
 import { nanoid } from 'nanoid'
 import { ChatInputProps } from './type'
+
 
 const ChatInput = () => {
   const [input, setInput] = useState<string>('')
@@ -14,21 +15,29 @@ const ChatInput = () => {
       const response = await fetch('/api/message', {
         method: 'POST',
         headers: {
-          'Contetn-Type': 'application/json'
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ messages: 'hello' })
+        body: JSON.stringify({ messages: [message] })
       })
-
+      console.log(response)
       return response.body
     },
-    onSuccess: () => {
-      console.log('success')
+    onSuccess: async (stream) => {
+      if (!stream) throw new Error("No stream found")
+
+      const reader = stream.getReader()
+      const decoder = new TextDecoder()
+      let done = false
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read()
+      }
     }
   })
 
   return (
     <div>
-      <TextaeaAutosize
+      <TextareaAutosize
         rows={2}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {

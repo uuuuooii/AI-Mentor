@@ -1,4 +1,4 @@
-import ChatInput from '@/app/components/chatInput'
+import ChatInput from '@/components/chatInput'
 import React from 'react'
 
 const Main = () => {

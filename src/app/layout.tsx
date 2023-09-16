@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Global from './lib/provider/emotion'
-import globals from './lib/styles/global'
-import ReactQueryProvider from './lib/provider/reactQuery'
+import Global from '../lib/provider/emotion'
+import globals from '../lib/styles/global'
+import ReactQueryProvider from '../lib/provider/reactQuery'
 
 
 export const metadata: Metadata = {

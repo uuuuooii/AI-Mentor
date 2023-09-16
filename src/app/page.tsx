@@ -1,4 +1,4 @@
-import Main from "./page/main/page";
+import Main from "./main/page";
 
 export default function Home() {
   return (

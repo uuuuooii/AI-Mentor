@@ -22,15 +22,21 @@ const ChatInput = () => {
       console.log(response)
       return response.body
     },
+
+    // 서버에서 온 데이터를 읽는 기능
     onSuccess: async (stream) => {
       if (!stream) throw new Error("No stream found")
 
       const reader = stream.getReader()
+      //디코딩은 이진수 데이터를 텍스트로 변환하는 과정을 의미함
       const decoder = new TextDecoder()
       let done = false
 
       while (!done) {
         const { value, done: doneReading } = await reader.read()
+        done = doneReading
+        const chunkValue = decoder.decode(value)
+        console.log(chunkValue)
       }
     }
   })

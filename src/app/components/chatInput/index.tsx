@@ -5,6 +5,19 @@ import TextaeaAutosize from 'react-textarea-autosize'
 
 const ChatInput = () => {
   const [input, setInput] = useState<string>('')
+
+  const { mutate: sendMessage, isLoading } = useMutation({
+    mutationFn: async () => {
+      const response = await fetch('/api/message', {
+        method: 'POST',
+        headers: {
+          'Contetn-Type': 'application/json'
+        },
+        body: JSON.stringify({})
+      })
+    }
+  })
+
   return (
     <div>
       <TextaeaAutosize

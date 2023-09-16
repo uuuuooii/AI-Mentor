@@ -1,4 +1,4 @@
-import { ChatInputProps } from '@/components/chatInput/type';
+import { ChatInputProps } from '@/components/chat/chatInput/type';
 import { chatbotPrompt } from '@/helper/constans/chatbotPrompt';
 import {
   ChatGPTMessage,

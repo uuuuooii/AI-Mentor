@@ -33,6 +33,11 @@ const ChatInput = () => {
       return response.body
     },
 
+    // 내가 쓴 내용 보여주기
+    onMutate(message) {
+      addMessage(message)
+    },
+
     // 서버에서 온 데이터를 읽는 기능
     onSuccess: async (stream) => {
       if (!stream) throw new Error("No stream found")

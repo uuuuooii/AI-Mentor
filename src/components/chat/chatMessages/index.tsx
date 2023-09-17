@@ -2,6 +2,7 @@
 
 import { MessagesContext } from '@/components/context/messages'
 import React, { HTMLAttributes, useContext } from 'react'
+import * as S from './style'
 
 interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> { }
 
@@ -12,11 +13,11 @@ const ChatMessages = ({ ...props }) => {
   return (
     <div {...props}>
       {inverseMessages.map((message) => (
-        <div key={message.id}>
-          <div>
-            <p>{message.text}</p>
-          </div>
-        </div>
+        <S.MessageContainer isUserMessage={message.isUserMessage} key={message.id}>
+          <S.MessageList isUserMessage={message.isUserMessage}>
+            <S.MessageItem isUserMessage={message.isUserMessage}>{message.text}</S.MessageItem>
+          </S.MessageList>
+        </S.MessageContainer>
       ))}
     </div>
   )

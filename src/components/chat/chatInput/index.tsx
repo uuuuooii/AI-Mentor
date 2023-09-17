@@ -6,9 +6,11 @@ import TextareaAutosize from 'react-textarea-autosize'
 import { nanoid } from 'nanoid'
 import { ChatInputProps } from './type'
 import { MessagesContext } from '@/components/context/messages'
-
+import { CornerDownLeft } from 'lucide-react';
+import { Spinner } from '@/components/Spinner/style'
 
 const ChatInput = () => {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const [input, setInput] = useState<string>('')
   const {
     messages,
@@ -18,7 +20,6 @@ const ChatInput = () => {
     setIsMessageUpdating
   } = useContext(MessagesContext)
 
-  const textareaRef = useRef<null | HTMLTextAreaElement>(null)
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationFn: async (message: ChatInputProps) => {
@@ -79,7 +80,7 @@ const ChatInput = () => {
     <div>
       <TextareaAutosize
         ref={textareaRef}
-        rows={2}
+
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault()
@@ -89,15 +90,27 @@ const ChatInput = () => {
               isUserMessage: true,
               text: input
             }
-
+            console.log(message)
             sendMessage(message)
           }
         }}
+        rows={2}
         value={input}
+        disabled={isLoading}
         onChange={(e) => setInput(e.target.value)}
         autoFocus
         placeholder='send a message'
       />
+
+      <div>
+        <kbd>
+          {isLoading ?
+            <Spinner />
+            :
+            <CornerDownLeft />
+          }
+        </kbd>
+      </div>
     </div>
   )
 }

@@ -107,7 +107,7 @@ const globals = css`
     padding: 0;
     border: 0;
     // project 별로 폰트 변경해주세요 //
-    font-family: Poppins, sans-serif;
+    font-family: SUIT, sans-serif;
     //========================= //
     font-weight: normal;
     vertical-align: baseline;

@@ -1,14 +1,12 @@
 'use client'
 
 import { MessagesContext } from '@/components/context/messages'
-import React, { HTMLAttributes, useContext } from 'react'
+import React, { useContext } from 'react'
 import * as S from './style'
-
-interface ChatMessagesProps extends HTMLAttributes<HTMLDivElement> { }
 
 const ChatMessages = ({ ...props }) => {
   const { messages } = useContext(MessagesContext)
-  const inverseMessages = [...messages].reverse()
+  const inverseMessages = [...messages]
 
   return (
     <div {...props}>

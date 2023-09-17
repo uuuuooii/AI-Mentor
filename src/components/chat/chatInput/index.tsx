@@ -8,6 +8,7 @@ import { ChatInputProps } from './type'
 import { MessagesContext } from '@/components/context/messages'
 import { CornerDownLeft } from 'lucide-react';
 import { Spinner } from '@/components/Spinner/style'
+import { toast } from 'react-hot-toast'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -30,9 +31,15 @@ const ChatInput = () => {
         },
         body: JSON.stringify({ messages: [message] })
       })
-      console.log(response)
+
+      if (!response.ok) {
+        throw new Error
+      }
+
       return response.body
     },
+
+
 
     // 내가 쓴 내용 보여주기
     onMutate(message) {
@@ -73,6 +80,11 @@ const ChatInput = () => {
       setTimeout(() => {
         textareaRef.current?.focus()
       }, 10)
+    },
+    onError(_, message) {
+      toast.error('문제가 있습니다. 다시 시도해 보세요')
+      removeMessage(message.id)
+      textareaRef.current?.focus()
     }
   })
 

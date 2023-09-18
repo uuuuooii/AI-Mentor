@@ -7,6 +7,7 @@ const Main = () => {
     <div>
       <ChatMessages />
       <ChatInput />
+
     </div>
   )
 }

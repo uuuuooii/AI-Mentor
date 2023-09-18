@@ -17,6 +17,7 @@ const ChatMessages = ({ ...props }) => {
           </S.MessageList>
         </S.MessageContainer>
       ))}
+
     </div>
   )
 }

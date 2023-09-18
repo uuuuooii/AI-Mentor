@@ -9,6 +9,7 @@ import { MessagesContext } from '@/components/context/messages'
 import { CornerDownLeft } from 'lucide-react';
 import { Spinner } from '@/components/Spinner/style'
 import { toast } from 'react-hot-toast'
+import InterviewButton from '../interviewButton'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -102,7 +103,6 @@ const ChatInput = () => {
               isUserMessage: true,
               text: input
             }
-            console.log(message)
             sendMessage(message)
           }
         }}
@@ -123,6 +123,8 @@ const ChatInput = () => {
           }
         </kbd>
       </div>
+
+      <InterviewButton sendMessage={sendMessage} />
     </div>
   )
 }

@@ -2,19 +2,34 @@ import { nanoid } from 'nanoid'
 import React from 'react'
 import { ChatInputProps } from '../chatInput/type'
 import { UseMutateFunction } from '@tanstack/react-query'
+import useDarkmode from '@/lib/hook/useDarkmode'
 
 interface InterviewButtonProps {
   sendMessage: UseMutateFunction<ReadableStream<Uint8Array> | null, unknown, ChatInputProps, void>
 }
 
 const InterviewButton = ({ sendMessage }: InterviewButtonProps) => {
-  return (
+  const { onClickModeChange } = useDarkmode()
 
-    <button onClick={() => sendMessage({
+  const startInterveiwButton = () => {
+    sendMessage({
       id: nanoid(),
       isUserMessage: true,
       text: '기술 면접 시작'
-    })}>기술 면접 시작</button>
+    })
+
+  }
+
+  return (
+    <button
+      onClick={() => {
+        startInterveiwButton();
+        onClickModeChange()
+      }
+      }
+    >
+      기술 면접 시작
+    </button >
   )
 }
 

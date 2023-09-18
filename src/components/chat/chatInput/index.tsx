@@ -10,6 +10,7 @@ import { CornerDownLeft } from 'lucide-react';
 import { Spinner } from '@/components/Spinner/style'
 import { toast } from 'react-hot-toast'
 import InterviewButton from '../interviewButton'
+import { Wrapper } from './style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -90,7 +91,7 @@ const ChatInput = () => {
   })
 
   return (
-    <div>
+    <Wrapper>
       <TextareaAutosize
         ref={textareaRef}
 
@@ -125,7 +126,7 @@ const ChatInput = () => {
       </div>
 
       <InterviewButton sendMessage={sendMessage} />
-    </div>
+    </Wrapper>
   )
 }
 

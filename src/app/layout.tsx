@@ -3,6 +3,8 @@ import Global from '../lib/provider/emotion'
 import globals from '../lib/styles/global'
 import ReactQueryProvider from '../lib/provider/reactQuery'
 import ContextProvider from '@/lib/provider/context'
+import EmotionProvider from '../lib/provider/emotion'
+import RecoilProvider from '@/lib/provider/recoil'
 
 
 export const metadata: Metadata = {
@@ -19,10 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ReactQueryProvider>
-          <ContextProvider>
-            <Global styles={globals} />
-            {children}
-          </ContextProvider>
+          <RecoilProvider>
+            <ContextProvider>
+              <EmotionProvider />
+              {children}
+            </ContextProvider>
+          </RecoilProvider>
         </ReactQueryProvider>
       </body>
     </html>

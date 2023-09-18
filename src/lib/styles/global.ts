@@ -1,5 +1,3 @@
-'use client';
-
 import { css } from '@emotion/react';
 
 const globals = css`

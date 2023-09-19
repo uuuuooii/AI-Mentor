@@ -3,6 +3,7 @@ import React from 'react'
 import { ChatInputProps } from '../chatInput/type'
 import { UseMutateFunction } from '@tanstack/react-query'
 import useDarkmode from '@/lib/hook/useDarkmode'
+import * as S from './style'
 
 interface InterviewButtonProps {
   sendMessage: UseMutateFunction<ReadableStream<Uint8Array> | null, unknown, ChatInputProps, void>
@@ -17,19 +18,20 @@ const InterviewButton = ({ sendMessage }: InterviewButtonProps) => {
       isUserMessage: true,
       text: '기술 면접 시작'
     })
-
   }
 
   return (
-    <button
-      onClick={() => {
-        startInterveiwButton();
-        onClickModeChange()
-      }
-      }
-    >
-      기술 면접 시작
-    </button >
+    <div>
+      <S.Point />
+      <S.Button
+        onClick={() => {
+          startInterveiwButton()
+          onClickModeChange()
+        }}
+      >
+        기술 면접 시작
+      </S.Button>
+    </div>
   )
 }
 

@@ -7,10 +7,10 @@ import { nanoid } from 'nanoid'
 import { ChatInputProps } from './type'
 import { MessagesContext } from '@/components/context/messages'
 import { CornerDownLeft } from 'lucide-react';
-import { Spinner } from '@/components/Spinner/style'
+import { Spinner } from '@/components/spinner/style'
 import { toast } from 'react-hot-toast'
 import InterviewButton from '../interviewButton'
-import { Wrapper } from './style'
+import * as S from './style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -91,10 +91,10 @@ const ChatInput = () => {
   })
 
   return (
-    <Wrapper>
+    <S.Wrapper>
       <TextareaAutosize
         ref={textareaRef}
-
+        className='test'
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault()
@@ -108,6 +108,7 @@ const ChatInput = () => {
           }
         }}
         rows={2}
+        maxRows={10}
         value={input}
         disabled={isLoading}
         onChange={(e) => setInput(e.target.value)}
@@ -115,18 +116,18 @@ const ChatInput = () => {
         placeholder='send a message'
       />
 
-      <div>
-        <kbd>
+      <S.IconWrap>
+        <S.Icon>
           {isLoading ?
             <Spinner />
             :
             <CornerDownLeft />
           }
-        </kbd>
-      </div>
+        </S.Icon>
+      </S.IconWrap>
 
       <InterviewButton sendMessage={sendMessage} />
-    </Wrapper>
+    </S.Wrapper>
   )
 }
 

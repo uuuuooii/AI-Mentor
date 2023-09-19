@@ -10,11 +10,15 @@ import { CornerDownLeft } from 'lucide-react';
 import { Spinner } from '@/components/spinner/style'
 import { toast } from 'react-hot-toast'
 import InterviewButton from '../interviewButton'
+import { useRecoilValue } from 'recoil'
+import { isDarkMode } from '@/lib/recoil/atom'
 import * as S from './style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const [input, setInput] = useState<string>('')
+  const isMode = useRecoilValue(isDarkMode)
+
   const {
     messages,
     addMessage,
@@ -40,8 +44,6 @@ const ChatInput = () => {
 
       return response.body
     },
-
-
 
     // 내가 쓴 내용 보여주기
     onMutate(message) {
@@ -91,10 +93,10 @@ const ChatInput = () => {
   })
 
   return (
-    <S.Wrapper>
+    <S.Wrapper isMode={isMode}>
       <TextareaAutosize
+
         ref={textareaRef}
-        className='test'
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault()

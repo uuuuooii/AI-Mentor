@@ -23,7 +23,7 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
   const [messages, setMessages] = useState<ChatInputProps[]>([
     {
       id: nanoid(),
-      text: 'Hello, how can I help you?',
+      text: '안녕하세요',
       isUserMessage: false
     }
   ])

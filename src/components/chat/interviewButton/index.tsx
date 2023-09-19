@@ -3,6 +3,8 @@ import React from 'react'
 import { ChatInputProps } from '../chatInput/type'
 import { UseMutateFunction } from '@tanstack/react-query'
 import useDarkmode from '@/lib/hook/useDarkmode'
+import { useRecoilValue } from 'recoil'
+import { isDarkMode } from '@/lib/recoil/atom'
 import * as S from './style'
 
 interface InterviewButtonProps {
@@ -11,6 +13,8 @@ interface InterviewButtonProps {
 
 const InterviewButton = ({ sendMessage }: InterviewButtonProps) => {
   const { onClickModeChange } = useDarkmode()
+  const isMode = useRecoilValue(isDarkMode)
+
 
   const startInterveiwButton = () => {
     sendMessage({
@@ -24,6 +28,7 @@ const InterviewButton = ({ sendMessage }: InterviewButtonProps) => {
     <div>
       <S.Point />
       <S.Button
+        isMode={isMode}
         onClick={() => {
           startInterveiwButton()
           onClickModeChange()

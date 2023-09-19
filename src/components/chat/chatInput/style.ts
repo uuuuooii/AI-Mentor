@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isMode: boolean }>`
   display: flex;
   align-items: center;
   gap: 29px;
@@ -18,15 +18,15 @@ export const Wrapper = styled.div`
     background: #e4e7eb;
     :focus {
       outline: none;
-
-      border-bottom: 2px solid #5046e4;
+      border-bottom: 2px solid
+        ${({ isMode }) => (isMode ? '#21c55d' : '#5046e4')};
     }
   }
 `;
 
 export const IconWrap = styled.div`
   position: absolute;
-  right: 117px;
+  right: 123px;
   top: 11px;
 `;
 

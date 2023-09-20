@@ -18,9 +18,6 @@ const ChatMessages = ({ ...props }) => {
       {inverseMessages.map((message) => (
         <S.MessageContainer isUserMessage={message.isUserMessage} key={message.id}>
           <S.MessageList isMode={isMode} isUserMessage={message.isUserMessage}>
-            {/* <S.MessageItem isMode={isMode} isUserMessage={message.isUserMessage}>
-              {message.text}
-            </S.MessageItem> */}
             <S.MessageItem isMode={isMode} isUserMessage={message.isUserMessage}>
               <SyntaxHighlighter language="javascript" style={docco}>
                 {message.text}

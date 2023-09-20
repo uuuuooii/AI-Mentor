@@ -32,15 +32,13 @@ export const MessageList = styled.ul<{
 }>`
   border-radius: 10px;
   padding: 10px;
-  background: ${({ isUserMessage }) => (isUserMessage ? '#8c9ec4' : '#37383b')};
+  background: ${({ isUserMessage }) => (isUserMessage ? '#8c9ec4' : '#cfd0d7')};
 
-  ${({ isMode }) => {
+  ${({ isMode, isUserMessage }) =>
     isMode &&
-      css`
-        background: ${({ isUserMessage }) =>
-          isUserMessage ? '#1F63F4' : '#E6E7EB'};
-      `;
-  }}
+    css`
+      background: ${isUserMessage ? '#97abd8' : '#cfd0d7'};
+    `}
 `;
 
 export const MessageItem = styled.li<{
@@ -49,13 +47,11 @@ export const MessageItem = styled.li<{
 }>`
   color: ${({ isUserMessage }) => (isUserMessage ? 'black' : 'white')};
 
-  ${({ isMode }) => {
+  ${({ isMode, isUserMessage }) =>
     isMode &&
-      css`
-        background: ${({ isUserMessage }) =>
-          isUserMessage ? '#1F63F4' : '#E6E7EB'};
-      `;
-  }}
+    css`
+      background: ${isUserMessage ? '#1F63F4' : '#cfd0d7'};
+    `}
 
   div {
     max-width: 600px;

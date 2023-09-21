@@ -39,7 +39,7 @@ export const Test = styled.div<{ isUserMessage: boolean }>`
     isUserMessage
       ? css`
           ::before {
-            position: absolute;
+            /* position: absolute; */
             left: 643px;
             top: 101px;
             transform: rotate(90deg);

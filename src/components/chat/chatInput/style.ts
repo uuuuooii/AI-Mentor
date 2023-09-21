@@ -11,9 +11,8 @@ export const Wrapper = styled.div<{ isMode: boolean }>`
     align-items: center;
     justify-content: center;
     width: 510px;
-    max-height: 40px !important;
-    padding: 9px 18px 32px 15px;
-    font-size: 18px;
+    padding: 10px 26px 10px 17px;
+    font-size: 16px;
     border-radius: 8px;
     background: #e4e7eb;
     :focus {
@@ -27,7 +26,7 @@ export const Wrapper = styled.div<{ isMode: boolean }>`
 export const IconWrap = styled.div`
   position: absolute;
   right: 123px;
-  top: 11px;
+  top: 9px;
 `;
 
 export const Icon = styled.kbd`

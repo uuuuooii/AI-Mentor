@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const Point = styled.span`
   position: absolute;
-  top: 18px;
   right: 91px;
   width: 7px;
   height: 7px;

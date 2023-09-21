@@ -19,6 +19,14 @@ export const Wrapper = styled.div`
   }
 `;
 
+//  style={{ borderBottom: '1px solid', position: 'fixed', top: '10px' }}
+export const Title = styled.div<{ isMode: boolean }>`
+  position: fixed;
+  top: 10px;
+  border-bottom: 1px solid;
+  color: ${({ isMode }) => (isMode ? 'white' : 'black')};
+`;
+
 export const MessageContainer = styled.div<{ isUserMessage: boolean }>`
   display: flex;
   align-items: flex-end;

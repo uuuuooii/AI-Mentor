@@ -95,29 +95,28 @@ const ChatInput = () => {
   return (
     <S.Wrapper isMode={isMode}>
       <TextareaAutosize
-
         ref={textareaRef}
         onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey) {
+          if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault()
 
             const message: ChatInputProps = {
               id: nanoid(),
               isUserMessage: true,
-              text: input
+              text: input,
             }
+
             sendMessage(message)
           }
         }}
-        rows={2}
-        maxRows={10}
+        rows={1}
+        maxRows={4}
         value={input}
+        autoFocus
         disabled={isLoading}
         onChange={(e) => setInput(e.target.value)}
-        autoFocus
-        placeholder='send a message'
+        placeholder='메세지를 보내주세요'
       />
-
       <S.IconWrap>
         <S.Icon>
           {isLoading ?

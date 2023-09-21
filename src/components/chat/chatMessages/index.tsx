@@ -15,6 +15,7 @@ const ChatMessages = ({ ...props }) => {
 
   return (
     <S.Wrapper {...props}>
+      <S.Title isMode={isMode}>Next Level</S.Title>
       {inverseMessages.map((message) => (
         <S.MessageContainer isUserMessage={message.isUserMessage} key={message.id}>
           <S.MessageList isMode={isMode} isUserMessage={message.isUserMessage}>

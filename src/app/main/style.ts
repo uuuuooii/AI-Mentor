@@ -7,6 +7,8 @@ export const Container = styled.div<{ isMode: boolean }>`
   align-items: center;
   position: relative;
   height: 100vh;
+  transition: all 0.3s ease; /* 부드러운 변화를 위한 transition 속성 추가 */
+
   ::before {
     content: '';
     position: absolute;
@@ -37,6 +39,8 @@ export const Container = styled.div<{ isMode: boolean }>`
       background: #161623;
       overflow: hidden;
       color: #fff;
+      transition: all 0.3s ease; /* 부드러운 변화를 위한 transition 속성 추가 */
+
       ::before {
         content: '';
         position: absolute;
@@ -80,7 +84,7 @@ export const ChatWrapper = styled.div`
 
 export const Messages = styled.div`
   position: absolute;
-  top: 25px;
+  top: 52px;
   width: 700px;
   height: 693px;
   padding: 0 43px;

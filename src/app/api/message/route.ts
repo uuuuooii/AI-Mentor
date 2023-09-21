@@ -23,12 +23,13 @@ export async function POST(req: Request) {
     });
 
     const payload: OpenAIStreamPayload = {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4',
       messages: outboundMessage,
-      temperature: 0,
+      temperature: 1,
+      top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
-      max_tokens: 150,
+      max_tokens: 1000,
       stream: true,
       n: 1,
     };

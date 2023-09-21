@@ -12,6 +12,7 @@ export const Wrapper = styled.div<{ isMode: boolean }>`
     justify-content: center;
     width: 510px;
     padding: 10px 26px 10px 17px;
+    max-height: 57px;
     font-size: 16px;
     border-radius: 8px;
     background: #e4e7eb;

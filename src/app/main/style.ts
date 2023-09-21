@@ -84,9 +84,9 @@ export const ChatWrapper = styled.div`
 
 export const Messages = styled.div`
   position: absolute;
-  top: 52px;
+  top: 14px;
   width: 700px;
-  height: 693px;
+  height: 700px;
   padding: 0 43px;
   overflow-y: scroll;
 `;

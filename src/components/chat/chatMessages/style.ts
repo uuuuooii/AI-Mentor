@@ -34,6 +34,28 @@ export const MessageContainer = styled.div<{ isUserMessage: boolean }>`
     isUserMessage ? 'flex-end' : 'flex-start'};
 `;
 
+export const Test = styled.div<{ isUserMessage: boolean }>`
+  ${({ isUserMessage }) =>
+    isUserMessage
+      ? css`
+          ::before {
+            position: absolute;
+            left: 643px;
+            top: 101px;
+            transform: rotate(90deg);
+            content: '';
+            border-bottom: 15px solid #8c9ec4;
+            border-right: 15px solid transparent;
+          }
+        `
+      : css`
+      ::before {
+        content: '';
+        border-top: 15px solid #cfd0d7;
+        border-left: 15px solid transparent;
+    `}
+`;
+
 export const MessageList = styled.ul<{
   isUserMessage: boolean;
   isMode: boolean;

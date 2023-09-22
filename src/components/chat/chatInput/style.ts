@@ -5,13 +5,13 @@ export const Wrapper = styled.div<{ isMode: boolean }>`
   align-items: center;
   gap: 39px;
   position: fixed;
-  bottom: 20px;
+  bottom: 13px;
   textarea {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 597px;
-    padding: 10px 26px 10px 17px;
+    padding: 10px 46px 10px 17px;
     max-height: 57px;
     font-size: 16px;
     border-radius: 8px;

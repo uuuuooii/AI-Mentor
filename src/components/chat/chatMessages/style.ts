@@ -55,14 +55,13 @@ export const RightTail = styled.div<{ isUserMessage: boolean }>`
   ${({ isUserMessage }) =>
     isUserMessage &&
     css`
-      ::after {
+      ::before {
         content: '';
         position: absolute;
         border-top: 15px solid #8c9ec4;
-        border-left: 15px solid transparent;
-        left: 123px;
+        border-right: 15px solid transparent;
+        left: -4px;
         top: -34px;
-        transform: rotate(180deg);
     `}
 `;
 

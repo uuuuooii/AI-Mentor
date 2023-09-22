@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: grid;
   gap: 27px;
   div {
-    max-width: 600px;
+    max-width: 718px;
     ul {
       max-width: 600px;
       li {
@@ -19,10 +19,10 @@ export const Wrapper = styled.div`
   }
 `;
 
-//  style={{ borderBottom: '1px solid', position: 'fixed', top: '10px' }}
 export const Title = styled.div<{ isMode: boolean }>`
   position: fixed;
-  top: 10px;
+  top: -31px;
+  left: 5px;
   border-bottom: 1px solid;
   color: ${({ isMode }) => (isMode ? 'white' : 'black')};
 `;
@@ -34,25 +34,35 @@ export const MessageContainer = styled.div<{ isUserMessage: boolean }>`
     isUserMessage ? 'flex-end' : 'flex-start'};
 `;
 
-export const Test = styled.div<{ isUserMessage: boolean }>`
+export const LeftTail = styled.div<{ isUserMessage: boolean }>`
+  position: relative;
   ${({ isUserMessage }) =>
-    isUserMessage
-      ? css`
-          ::before {
-            /* position: absolute; */
-            left: 643px;
-            top: 101px;
-            transform: rotate(90deg);
-            content: '';
-            border-bottom: 15px solid #8c9ec4;
-            border-right: 15px solid transparent;
-          }
-        `
-      : css`
+    !isUserMessage &&
+    css`
       ::before {
         content: '';
+        position: absolute;
         border-top: 15px solid #cfd0d7;
         border-left: 15px solid transparent;
+        right: -4px;
+        top: -35px;
+      }
+    `}
+`;
+
+export const RightTail = styled.div<{ isUserMessage: boolean }>`
+  position: relative;
+  ${({ isUserMessage }) =>
+    isUserMessage &&
+    css`
+      ::after {
+        content: '';
+        position: absolute;
+        border-top: 15px solid #8c9ec4;
+        border-left: 15px solid transparent;
+        left: 123px;
+        top: -34px;
+        transform: rotate(180deg);
     `}
 `;
 

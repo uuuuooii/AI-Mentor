@@ -2,11 +2,12 @@ import styled from '@emotion/styled';
 
 export const Point = styled.span`
   position: absolute;
-  right: 91px;
+  right: 94px;
   width: 7px;
   height: 7px;
   background: #21c55d;
   border-radius: 50%;
+  top: 17px;
 `;
 
 export const Button = styled.button<{ isMode: boolean }>`

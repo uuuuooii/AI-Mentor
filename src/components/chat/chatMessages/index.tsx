@@ -14,22 +14,22 @@ const ChatMessages = ({ ...props }) => {
   const isMode = useRecoilValue(isDarkMode)
 
   return (
-    <S.Wrapper {...props}>
-      {/* <S.Title isMode={isMode}>Next Level</S.Title> */}
-      {inverseMessages.map((message) => (
-        <S.MessageContainer isUserMessage={message.isUserMessage} key={message.id}>
-          <S.Test isUserMessage={message.isUserMessage}></S.Test>
-          <S.MessageList isMode={isMode} isUserMessage={message.isUserMessage}>
-            <S.MessageItem isMode={isMode} isUserMessage={message.isUserMessage}>
-              <SyntaxHighlighter language="javascript" style={docco}>
-                {message.text}
-              </SyntaxHighlighter>
-            </S.MessageItem>
-          </S.MessageList>
-        </S.MessageContainer>
-      ))}
-
-    </S.Wrapper>
+    <>
+      <S.Title isMode={isMode}>Next Level</S.Title><S.Wrapper {...props}>
+        {inverseMessages.map((message) => (
+          <S.MessageContainer isUserMessage={message.isUserMessage} key={message.id}>
+            <S.LeftTail isUserMessage={message.isUserMessage}></S.LeftTail>
+            <S.RightTail isUserMessage={message.isUserMessage}></S.RightTail>
+            <S.MessageList isMode={isMode} isUserMessage={message.isUserMessage}>
+              <S.MessageItem isMode={isMode} isUserMessage={message.isUserMessage}>
+                <SyntaxHighlighter language="javascript" style={docco}>
+                  {message.text}
+                </SyntaxHighlighter>
+              </S.MessageItem>
+            </S.MessageList>
+          </S.MessageContainer>
+        ))}
+      </S.Wrapper></>
   )
 }
 

@@ -3,14 +3,14 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div<{ isMode: boolean }>`
   display: flex;
   align-items: center;
-  gap: 29px;
+  gap: 39px;
   position: fixed;
   bottom: 20px;
   textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 510px;
+    width: 597px;
     padding: 10px 26px 10px 17px;
     max-height: 57px;
     font-size: 16px;
@@ -26,7 +26,7 @@ export const Wrapper = styled.div<{ isMode: boolean }>`
 
 export const IconWrap = styled.div`
   position: absolute;
-  right: 123px;
+  right: 137px;
   top: 9px;
 `;
 

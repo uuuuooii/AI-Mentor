@@ -1,35 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 해커톤
 
-## Getting Started
+- 주제 : AI 멘토
+  - Java / JavaScript / Kotlin / React / Next.js / Node.js / Nest.js / Spring / CS 주제별로 질문/대답이 가능한 AI 멘토를 구현
+  - AI 멘토가 먼저 면접질문등을 물어볼 수 있으며, 대답에 맞추어 꼬리질문을 할 수 있어야 함
+  - AI 멘토에게 궁금한것을 물어보면 이해할 수 있는 답변을 해야함
+    - ex) Redux의 ducks 패턴을 꼭 써야 하나요? / 이 코드를 리뷰해주세요 / prisma의 schema를 설정하는 것이 어려워요.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- 기술 소개
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - openai는 gpt-4를 사용,
+    프롬프트를 커스텀해서 AI 멘토의 역할, 사용법 설명, 질문 난이도와, 질문과 꼬리 질문 설정.
+    그 외에로는 Openai 옵션을 통해서 텍스트 개수, 대답 수, 정확도를 설정.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 과제 외 아이디어
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  - 난이도 설정
+  - 이용 방법 소개
+  - 대화 내용 파일로 추출
+  - 텍스트 하이라이팅 (마크다운)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# AI-Mentor
+아이디어를 실현하기 위해서 난이도 설정과 이용 방법 소개는 프롬프트를 통해서 설정하였고
+마크다운 처럼 텍스트 하이라이팅 되는 것(react-syntax-highlighter)과, 대화 내용을 파일로 추출하는 부분(file-saver)은 적합한 오픈소스를 사용해서
+커스텀한 후 적용을.

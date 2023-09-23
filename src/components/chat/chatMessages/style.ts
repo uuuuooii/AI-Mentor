@@ -58,7 +58,7 @@ export const RightTail = styled.div<{ isUserMessage: boolean }>`
       ::before {
         content: '';
         position: absolute;
-        border-top: 15px solid #8c9ec4;
+        border-top: 15px solid #97ccd8;
         border-right: 15px solid transparent;
         left: -4px;
         top: -34px;
@@ -71,12 +71,12 @@ export const MessageList = styled.ul<{
 }>`
   border-radius: 10px;
   padding: 10px;
-  background: ${({ isUserMessage }) => (isUserMessage ? '#8c9ec4' : '#cfd0d7')};
+  background: ${({ isUserMessage }) => (isUserMessage ? '#97ccd8' : '#cfd0d7')};
 
   ${({ isMode, isUserMessage }) =>
     isMode &&
     css`
-      background: ${isUserMessage ? '#97abd8' : '#cfd0d7'};
+      background: ${isUserMessage ? '#97ccd8' : '#cfd0d7'};
     `}
 `;
 

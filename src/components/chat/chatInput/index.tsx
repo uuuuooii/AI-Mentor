@@ -33,7 +33,7 @@ const ChatInput = () => {
   const saveConversationToFile = useImportTxt({ inverseMessages })
 
   const makeImportTxtFile = (input: string) => {
-    if (input === '대화 저장') {
+    if (input === '내용 저장') {
       saveConversationToFile();
     }
   }

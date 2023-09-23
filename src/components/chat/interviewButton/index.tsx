@@ -1,14 +1,13 @@
 import { nanoid } from 'nanoid'
 import React from 'react'
 import { ChatInputProps } from '../chatInput/type'
-import { UseMutateFunction } from '@tanstack/react-query'
 import useDarkmode from '@/lib/hook/useDarkmode'
 import { useRecoilValue } from 'recoil'
 import { isDarkMode } from '@/lib/recoil/atom'
 import * as S from './style'
 
 interface InterviewButtonProps {
-  sendMessage: UseMutateFunction<ReadableStream<Uint8Array> | null, unknown, ChatInputProps, void>
+  sendMessage: (message: ChatInputProps) => void
 }
 
 const InterviewButton = ({ sendMessage }: InterviewButtonProps) => {

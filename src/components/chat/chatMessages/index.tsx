@@ -35,7 +35,6 @@ const ChatMessages = ({ ...props }) => {
                 <SyntaxHighlighter language="javascript" style={docco}>
                   {message.text}
                 </SyntaxHighlighter>
-
               </S.MessageItem>
             </S.MessageList>
 

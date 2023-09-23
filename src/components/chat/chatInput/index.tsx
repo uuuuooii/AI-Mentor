@@ -12,12 +12,14 @@ import { toast } from 'react-hot-toast'
 import InterviewButton from '../interviewButton'
 import { useRecoilValue } from 'recoil'
 import { isDarkMode } from '@/lib/recoil/atom'
+import useImportTxt from '@/lib/hook/useImportTxt'
 import * as S from './style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const [input, setInput] = useState<string>('')
   const isMode = useRecoilValue(isDarkMode)
+
 
   const {
     messages,
@@ -26,7 +28,15 @@ const ChatInput = () => {
     updateMessage,
     setIsMessageUpdating
   } = useContext(MessagesContext)
+  const inverseMessages = [...messages]
 
+  const saveConversationToFile = useImportTxt({ inverseMessages })
+
+  const makeImportTxtFile = (input: string) => {
+    if (input === '대화 저장') {
+      saveConversationToFile();
+    }
+  }
 
   const { mutate: sendMessage, isLoading } = useMutation({
     mutationFn: async (message: ChatInputProps) => {
@@ -107,6 +117,7 @@ const ChatInput = () => {
             }
 
             sendMessage(message)
+            makeImportTxtFile(input)
           }
         }}
         rows={1}

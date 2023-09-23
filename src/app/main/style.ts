@@ -71,7 +71,7 @@ export const ChatWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 800px;
-  height: 800px;
+  height: 744px;
   background: rgba(225, 225, 225, 0.1);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(225, 225, 255, 0.5);
@@ -86,7 +86,7 @@ export const Messages = styled.div`
   position: absolute;
   top: 16px;
   width: 797px;
-  height: 700px;
+  height: 664px;
   padding: 0 43px;
   overflow-y: scroll;
 `;

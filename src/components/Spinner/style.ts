@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Spinner = styled.div`
+const Spinner = styled.div`
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -17,3 +17,5 @@ export const Spinner = styled.div`
   border-radius: 50%;
   animation: spin 2s linear infinite; /* 애니메이션 클래스 적용 */
 `;
+
+export default Spinner;

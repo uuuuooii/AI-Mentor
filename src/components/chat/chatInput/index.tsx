@@ -7,13 +7,13 @@ import { nanoid } from 'nanoid'
 import { ChatInputProps } from './type'
 import { MessagesContext } from '@/components/context/messages'
 import { CornerDownLeft } from 'lucide-react';
-import { Spinner } from '@/components/spinner/style'
 import { toast } from 'react-hot-toast'
 import InterviewButton from '../interviewButton'
 import { useRecoilValue } from 'recoil'
 import { isDarkMode } from '@/lib/recoil/atom'
 import useImportTxt from '@/lib/hook/useImportTxt'
 import * as S from './style'
+import { Spinner } from '@/components/spinner/style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)

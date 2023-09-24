@@ -8,7 +8,7 @@ export const Container = styled.div<{ isMode: boolean }>`
   position: relative;
   height: 100vh;
   transition: all 0.3s ease; /* 부드러운 변화를 위한 transition 속성 추가 */
-  overflow: hidden;
+
   ::before {
     content: '';
     position: absolute;
@@ -71,7 +71,7 @@ export const ChatWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 800px;
-  height: 600px;
+  height: 689px;
   background: rgba(225, 225, 225, 0.1);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(225, 225, 255, 0.5);

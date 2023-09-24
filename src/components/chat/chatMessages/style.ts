@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   display: grid;
   gap: 27px;
+  max-height: 593px;
+
   div {
     max-width: 718px;
     ul {

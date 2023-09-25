@@ -12,8 +12,8 @@ import InterviewButton from '../interviewButton'
 import { useRecoilValue } from 'recoil'
 import { isDarkMode } from '@/lib/recoil/atom'
 import useImportTxt from '@/lib/hook/useImportTxt'
+import Spinner from '@/components/spinner/style'
 import * as S from './style'
-// import Spinner from '@/components/spinner/style'
 
 const ChatInput = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
@@ -131,7 +131,7 @@ const ChatInput = () => {
       <S.IconWrap>
         <S.Icon>
           {isLoading ?
-            <S.Spinner />
+            <Spinner />
             :
             <CornerDownLeft />
           }

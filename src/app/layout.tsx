@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import Global from '../lib/provider/emotion'
+import Global from '../lib/utils/provider/emotion'
 import globals from '../lib/styles/global'
-import ReactQueryProvider from '../lib/provider/reactQuery'
-import ContextProvider from '@/lib/provider/context'
-import EmotionProvider from '../lib/provider/emotion'
-import RecoilProvider from '@/lib/provider/recoil'
+import ReactQueryProvider from '../lib/utils/provider/reactQuery'
+import ContextProvider from '../lib/utils/provider/context'
+import EmotionProvider from '../lib/utils/provider/emotion'
+import RecoilProvider from '../lib/utils/provider/recoil'
 
 
 export const metadata: Metadata = {

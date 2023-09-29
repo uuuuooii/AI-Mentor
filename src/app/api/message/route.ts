@@ -1,5 +1,5 @@
 import { ChatInputProps } from '@/components/chat/chatInput/type';
-import { chatbotPrompt } from '@/helper/constans/chatbotPrompt';
+import { chatbotPrompt } from '@/lib/utils/helper/constans/chatbotPrompt';
 import {
   ChatGPTMessage,
   OpenAIStream,

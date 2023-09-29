@@ -1,5 +1,7 @@
 # 해커톤
 
+![chat](./public/chating.png)
+
 - 주제 : AI 멘토
   - Java / JavaScript / Kotlin / React / Next.js / Node.js / Nest.js / Spring / CS 주제별로 질문/대답이 가능한 AI 멘토를 구현
   - AI 멘토가 먼저 면접질문등을 물어볼 수 있으며, 대답에 맞추어 꼬리질문을 할 수 있어야 함

@@ -3,12 +3,11 @@
 ![chat](./public/chating.png)
 
 - 주제 : AI 멘토
+
   - Java / JavaScript / Kotlin / React / Next.js / Node.js / Nest.js / Spring / CS 주제별로 질문/대답이 가능한 AI 멘토를 구현
   - AI 멘토가 먼저 면접질문등을 물어볼 수 있으며, 대답에 맞추어 꼬리질문을 할 수 있어야 함
   - AI 멘토에게 궁금한것을 물어보면 이해할 수 있는 답변을 해야함
     - ex) Redux의 ducks 패턴을 꼭 써야 하나요? / 이 코드를 리뷰해주세요 / prisma의 schema를 설정하는 것이 어려워요.
-
----
 
 - 기술 소개
 

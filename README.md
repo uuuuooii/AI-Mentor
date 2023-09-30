@@ -1,4 +1,4 @@
-# 해커톤
+# AI멘토
 
 ![chat](./public/chating.png)
 

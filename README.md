@@ -1,27 +1,11 @@
-# 해커톤
+# AI-Mentor
+
+해커톤의 주제였고 혼자 참여해서 우수상을 수상한 프로젝트
 
 ![chat](./public/chating.png)
 
-- 주제 : AI 멘토
+![img](https://media.licdn.com/dms/image/D562DAQF7tbZIYjLZTg/profile-treasury-image-shrink_800_800/0/1698513659279?e=1700996400&v=beta&t=GpIDrKISeHw9vQV4N7bWoH8rTPJtmPoci3ALSoJe3uo)
 
-  - Java / JavaScript / Kotlin / React / Next.js / Node.js / Nest.js / Spring / CS 주제별로 질문/대답이 가능한 AI 멘토를 구현
-  - AI 멘토가 먼저 면접질문등을 물어볼 수 있으며, 대답에 맞추어 꼬리질문을 할 수 있어야 함
-  - AI 멘토에게 궁금한것을 물어보면 이해할 수 있는 답변을 해야함
-    - ex) Redux의 ducks 패턴을 꼭 써야 하나요? / 이 코드를 리뷰해주세요 / prisma의 schema를 설정하는 것이 어려워요.
-
-- 기술 소개
-
-  - openai는 gpt-4를 사용,
-    프롬프트를 커스텀해서 AI 멘토의 역할, 사용법 설명, 질문 난이도와, 질문과 꼬리 질문 설정.
-    그 외에로는 Openai 옵션을 통해서 텍스트 개수, 대답 수, 정확도를 설정.
-
-- 과제 외 아이디어
-
-  - 난이도 설정
-  - 이용 방법 소개
-  - 대화 내용 파일로 추출
-  - 텍스트 하이라이팅 (마크다운)
-
-아이디어를 실현하기 위해서 난이도 설정과 이용 방법 소개는 프롬프트를 통해서 설정하였고
-마크다운 처럼 텍스트 하이라이팅 되는 것(react-syntax-highlighter)과, 대화 내용을 파일로 추출하는 부분(file-saver)은 적합한 오픈소스를 사용해서
-커스텀한 후 적용.
+- 혼자서도 기술 면접이 가능하도록 AI 멘토가 먼저 면접질문등을 물어볼 수 있으며, 대답에 맞추어 꼬리질문이 가능.
+- 프롬프트를 커스텀하여 AI 멘토의 역할, 사용법 설명, 질문 난이도를 설정하였음. 이로인해 본인의 상황에 맞게 질문을 체계적으로 받을 수 있음.
+- 대화 내용 언제든 다시 볼 수 있도록 txt파일로 다운로드가 가능.
